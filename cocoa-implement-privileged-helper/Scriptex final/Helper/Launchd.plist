@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Label</key>
+	<string>com.abridoux.Scriptex.helper</string>
+	<key>StandardOutputPath</key>
+	<string>/tmp/scriptex.helper.log</string>
+	<key>MachServices</key>
+	<dict>
+		<key>com.abridoux.Scriptex.helper</key>
+		<true/>
+	</dict>
+</dict>
+</plist>

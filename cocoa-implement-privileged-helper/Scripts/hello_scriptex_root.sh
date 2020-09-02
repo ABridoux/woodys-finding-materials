@@ -1,0 +1,1 @@
+echo "Hello Scriptex, I am `(/usr/bin/whoami)`"
