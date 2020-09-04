@@ -23,7 +23,7 @@
 		BDC4F5B8248D5FE4005713B0 /* ScriptexError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC4F5B7248D5FE4005713B0 /* ScriptexError.swift */; };
 		BDF14BF02490D569002BEF29 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF14BEF2490D569002BEF29 /* main.swift */; };
 		BDF14BF4249111D3002BEF29 /* ScriptexError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC4F5B7248D5FE4005713B0 /* ScriptexError.swift */; };
-		BDF14BF624911201002BEF29 /* CommandLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF14BF524911201002BEF29 /* CommandLine.swift */; };
+		BDF14BF624911201002BEF29 /* HelperExecutionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF14BF524911201002BEF29 /* HelperExecutionService.swift */; };
 		BDF14BF72491125C002BEF29 /* CommandLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC4F5B5248D5909005713B0 /* CommandLine.swift */; };
 		BDF1F5BC2494F5E60000B09A /* HelperConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDBAE8CF24901C8800292370 /* HelperConstants.swift */; };
 /* End PBXBuildFile section */
@@ -46,8 +46,7 @@
 		BDC4F5B5248D5909005713B0 /* CommandLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandLine.swift; sourceTree = "<group>"; };
 		BDC4F5B7248D5FE4005713B0 /* ScriptexError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScriptexError.swift; sourceTree = "<group>"; };
 		BDF14BEF2490D569002BEF29 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
-		BDF14BF524911201002BEF29 /* CommandLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandLine.swift; sourceTree = "<group>"; };
-		BDF1F5C02495292C0000B09A /* SMJobBlessUtil.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = SMJobBlessUtil.py; sourceTree = "<group>"; };
+		BDF14BF524911201002BEF29 /* HelperExecutionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperExecutionService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,8 +74,7 @@
 				BDBAE8CD24901C1B00292370 /* Helper.swift */,
 				BDF14BEF2490D569002BEF29 /* main.swift */,
 				BDBAE8CF24901C8800292370 /* HelperConstants.swift */,
-				BDF14BF524911201002BEF29 /* CommandLine.swift */,
-				BDF1F5C02495292C0000B09A /* SMJobBlessUtil.py */,
+				BDF14BF524911201002BEF29 /* HelperExecutionService.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -218,7 +216,7 @@
 				BDBAE8CC24901BEB00292370 /* RemoteApplicationProtocol.swift in Sources */,
 				BDF14BF02490D569002BEF29 /* main.swift in Sources */,
 				BDBAE8D024901C8800292370 /* HelperConstants.swift in Sources */,
-				BDF14BF624911201002BEF29 /* CommandLine.swift in Sources */,
+				BDF14BF624911201002BEF29 /* HelperExecutionService.swift in Sources */,
 				BD794E9B24936A4C0092C659 /* Result+Extensions.swift in Sources */,
 				BDF14BF4249111D3002BEF29 /* ScriptexError.swift in Sources */,
 				BDBAE8CB24901BE900292370 /* HelperProtocol.swift in Sources */,

@@ -1,6 +1,6 @@
 import Foundation
 
-struct ExecutionService {
+struct HelperExecutionService {
 
     // MARK: - Constants
 

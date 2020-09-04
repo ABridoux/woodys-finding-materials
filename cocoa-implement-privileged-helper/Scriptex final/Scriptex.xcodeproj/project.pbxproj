@@ -23,7 +23,7 @@
 		BDC4F5B8248D5FE4005713B0 /* ScriptexError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC4F5B7248D5FE4005713B0 /* ScriptexError.swift */; };
 		BDF14BF02490D569002BEF29 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF14BEF2490D569002BEF29 /* main.swift */; };
 		BDF14BF4249111D3002BEF29 /* ScriptexError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC4F5B7248D5FE4005713B0 /* ScriptexError.swift */; };
-		BDF14BF624911201002BEF29 /* ExecutionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF14BF524911201002BEF29 /* ExecutionService.swift */; };
+		BDF14BF624911201002BEF29 /* HelperExecutionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF14BF524911201002BEF29 /* HelperExecutionService.swift */; };
 		BDF14BF72491125C002BEF29 /* ExecutionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC4F5B5248D5909005713B0 /* ExecutionService.swift */; };
 		BDF1F5BC2494F5E60000B09A /* HelperConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDBAE8CF24901C8800292370 /* HelperConstants.swift */; };
 		BDF1F5BF249527430000B09A /* com.abridoux.Scriptex.helper in CopyFiles */ = {isa = PBXBuildFile; fileRef = BDBAE8BF2490170800292370 /* com.abridoux.Scriptex.helper */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
@@ -60,7 +60,7 @@
 		BDC4F5B5248D5909005713B0 /* ExecutionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExecutionService.swift; sourceTree = "<group>"; };
 		BDC4F5B7248D5FE4005713B0 /* ScriptexError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScriptexError.swift; sourceTree = "<group>"; };
 		BDF14BEF2490D569002BEF29 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
-		BDF14BF524911201002BEF29 /* ExecutionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExecutionService.swift; sourceTree = "<group>"; };
+		BDF14BF524911201002BEF29 /* HelperExecutionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperExecutionService.swift; sourceTree = "<group>"; };
 		BDF1F5C22495323B0000B09A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BDF1F5C3249532E30000B09A /* Launchd.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Launchd.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -90,7 +90,7 @@
 				BDBAE8CD24901C1B00292370 /* Helper.swift */,
 				BDF14BEF2490D569002BEF29 /* main.swift */,
 				BDBAE8CF24901C8800292370 /* HelperConstants.swift */,
-				BDF14BF524911201002BEF29 /* ExecutionService.swift */,
+				BDF14BF524911201002BEF29 /* HelperExecutionService.swift */,
 				BDF1F5C22495323B0000B09A /* Info.plist */,
 				BDF1F5C3249532E30000B09A /* Launchd.plist */,
 			);
@@ -235,7 +235,7 @@
 				BDBAE8CC24901BEB00292370 /* RemoteApplicationProtocol.swift in Sources */,
 				BDF14BF02490D569002BEF29 /* main.swift in Sources */,
 				BDBAE8D024901C8800292370 /* HelperConstants.swift in Sources */,
-				BDF14BF624911201002BEF29 /* ExecutionService.swift in Sources */,
+				BDF14BF624911201002BEF29 /* HelperExecutionService.swift in Sources */,
 				BD794E9B24936A4C0092C659 /* Result+Extensions.swift in Sources */,
 				BDF14BF4249111D3002BEF29 /* ScriptexError.swift in Sources */,
 				BDBAE8CB24901BE900292370 /* HelperProtocol.swift in Sources */,

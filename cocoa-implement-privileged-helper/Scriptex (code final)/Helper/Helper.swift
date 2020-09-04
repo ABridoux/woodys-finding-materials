@@ -21,7 +21,7 @@ class Helper: NSObject, NSXPCListenerDelegate, HelperProtocol {
     func executeScript(at path: String, then completion: @escaping (String?, Error?) -> Void) {
         NSLog("Executing script at \(path)")
         do {
-            try ExecutionService.executeScript(at: path) { (result) in
+            try HelperExecutionService.executeScript(at: path) { (result) in
                 NSLog("Output: \(result.string ?? ""). Error: \(result.error?.localizedDescription ?? "")")
                 completion(result.string, result.error)
             }
