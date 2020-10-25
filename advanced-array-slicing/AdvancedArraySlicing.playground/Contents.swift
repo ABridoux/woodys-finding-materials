@@ -2,7 +2,7 @@ import Foundation
 
 // MARK: - Bounds
 
-struct Bounds: Equatable {
+public struct Bounds: Equatable {
 
     private let lower: Bound
     private let upper: Bound
@@ -14,9 +14,9 @@ struct Bounds: Equatable {
 
     public func range(lastValidIndex: Int) throws -> ClosedRange<Int> {
         let lower = self.lower.value < 0 ?
-            // count from the end of the array
-            lastValidIndex + self.lower.value :
-            self.lower.value
+                // count from the end of the array
+                lastValidIndex + self.lower.value :
+                self.lower.value
 
         let upper: Int
         if self.upper == .last {
@@ -38,9 +38,10 @@ struct Bounds: Equatable {
 
 // MARK: Bound
 
-extension Bounds {
+public extension Bounds {
 
     struct Bound: ExpressibleByIntegerLiteral, Equatable {
+
         public static let first = Bound(0, identifier: "first")
         public static let last = Bound(0, identifier: "last")
 
@@ -64,7 +65,7 @@ extension Bounds {
 
 // MARK: - Array subscript
 
-extension Array {
+public extension Array {
 
     subscript(_ bounds: Bounds) -> ArraySlice<Element> {
         do {
@@ -78,7 +79,7 @@ extension Array {
 
 infix operator ~>
 
-func ~> (lhs: Bounds.Bound, rhs: Bounds.Bound) -> Bounds {
+public func ~> (lhs: Bounds.Bound, rhs: Bounds.Bound) -> Bounds {
     Bounds(lower: lhs, upper: rhs)
 }
 
