@@ -107,7 +107,6 @@ public func ~> (lhs: Bounds.Bound, rhs: Bounds.Bound) -> Bounds {
     Bounds(lower: lhs, upper: rhs)
 }
 
-
 // MARK: - Test
 
 let array = ["Riri", "Fifi", "Loulou", "Donald", "Daisy"]
