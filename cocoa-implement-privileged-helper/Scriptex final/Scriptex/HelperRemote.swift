@@ -36,9 +36,8 @@ struct HelperRemote {
 
     /// Install the Helper in the privileged helper tools folder and load the daemon
     private func installHelper() throws {
-        // We will ask to the user to validate the helper installation in /Library/PrivilegedHelperTools and daemon loading
 
-        // Empty authorization to test
+        // try to get a valid empty authorisation
         var authRef: AuthorizationRef?
         var authStatus = AuthorizationCreate(nil, nil, [.preAuthorize], &authRef)
 
@@ -46,10 +45,25 @@ struct HelperRemote {
             throw ScriptexError.helperInstallation("Unable to get a valid empty authorization reference to load Helper daemon")
         }
 
-        // Validation for SMJobBless, which will install the helper and load the daemon
-        var authItem = AuthorizationItem(name: kSMRightBlessPrivilegedHelper, valueLength: 0, value: nil, flags: 0)
-        var authRights = AuthorizationRights(count: 1, items: &authItem)
-        let flags: AuthorizationFlags = [[], .interactionAllowed, .extendRights, .preAuthorize]
+        // create an AuthorizationItem to specify we want to bless a privileged Helper
+        let authItem = kSMRightBlessPrivilegedHelper.withCString { authorizationString in
+            AuthorizationItem(name: authorizationString, valueLength: 0, value: nil, flags: 0)
+        }
+
+        // it's required to pass a pointer to the call of the AuthorizationRights.init function
+        let pointer = UnsafeMutablePointer<AuthorizationItem>.allocate(capacity: 1)
+        pointer.initialize(to: authItem)
+
+        defer {
+            // as we instantiate a pointer, it's our responsibility to make sure it's deallocated
+            pointer.deinitialize(count: 1)
+            pointer.deallocate()
+        }
+
+        // store the authorization items inside an AuthorizationRights object
+        var authRights = AuthorizationRights(count: 1, items: pointer)
+
+        let flags: AuthorizationFlags = [.interactionAllowed, .extendRights, .preAuthorize]
         authStatus = AuthorizationCreate(&authRights, nil, flags, &authRef)
 
         guard authStatus == errAuthorizationSuccess else {
@@ -64,7 +78,7 @@ struct HelperRemote {
         }
 
         // Helper successfully installed
-        // Release the authorization, as mentionned in the doc
+        // Release the authorization, as mentioned in the doc
         AuthorizationFree(authRef!, [])
     }
 

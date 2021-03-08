@@ -24,8 +24,10 @@ SOFTWARE.
 
 import Foundation
 
-struct HelperConstants {
+enum HelperConstants {
+    static let bundleID = "com.abridoux.Scriptex"
+    static let domain = "\(bundleID).helper"
     static let helpersFolder = "/Library/PrivilegedHelperTools/"
-    static let domain = "com.abridoux.Scriptex.helper"
     static let helperPath = helpersFolder + domain
+    static let subject = "QMZ7ESHY49"
 }

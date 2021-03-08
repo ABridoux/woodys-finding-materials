@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BD06214025F58C760014DAD3 /* ConnectionIdentityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD06213F25F58C760014DAD3 /* ConnectionIdentityService.swift */; };
+		BD06214625F58D590014DAD3 /* AuditTokenHack.m in Sources */ = {isa = PBXBuildFile; fileRef = BD06214525F58D590014DAD3 /* AuditTokenHack.m */; };
+		BD06214D25F599350014DAD3 /* OSStatus+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD06214C25F599350014DAD3 /* OSStatus+Extensions.swift */; };
 		BD794E9A249368370092C659 /* Result+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD794E99249368370092C659 /* Result+Extensions.swift */; };
 		BD794E9B24936A4C0092C659 /* Result+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD794E99249368370092C659 /* Result+Extensions.swift */; };
 		BD794E9D2493777A0092C659 /* HelperRemote.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD794E9C2493777A0092C659 /* HelperRemote.swift */; };
@@ -43,6 +46,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		BD06213725F58C200014DAD3 /* com.abridoux.Scriptex.helper-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "com.abridoux.Scriptex.helper-Bridging-Header.h"; sourceTree = "<group>"; };
+		BD06213F25F58C760014DAD3 /* ConnectionIdentityService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionIdentityService.swift; sourceTree = "<group>"; };
+		BD06214525F58D590014DAD3 /* AuditTokenHack.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AuditTokenHack.m; sourceTree = "<group>"; };
+		BD06214925F58D810014DAD3 /* AuditTokenHack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AuditTokenHack.h; sourceTree = "<group>"; };
+		BD06214C25F599350014DAD3 /* OSStatus+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OSStatus+Extensions.swift"; sourceTree = "<group>"; };
 		BD794E99249368370092C659 /* Result+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Result+Extensions.swift"; sourceTree = "<group>"; };
 		BD794E9C2493777A0092C659 /* HelperRemote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperRemote.swift; sourceTree = "<group>"; };
 		BDBAE8BF2490170800292370 /* com.abridoux.Scriptex.helper */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = com.abridoux.Scriptex.helper; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -86,6 +94,9 @@
 		BDBAE8C02490170800292370 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				BD06213F25F58C760014DAD3 /* ConnectionIdentityService.swift */,
+				BD06214525F58D590014DAD3 /* AuditTokenHack.m */,
+				BD06214925F58D810014DAD3 /* AuditTokenHack.h */,
 				BDBAE8CA24901BC600292370 /* XPC Protocols */,
 				BDBAE8CD24901C1B00292370 /* Helper.swift */,
 				BDF14BEF2490D569002BEF29 /* main.swift */,
@@ -93,6 +104,8 @@
 				BDF14BF524911201002BEF29 /* HelperExecutionService.swift */,
 				BDF1F5C22495323B0000B09A /* Info.plist */,
 				BDF1F5C3249532E30000B09A /* Launchd.plist */,
+				BD06213725F58C200014DAD3 /* com.abridoux.Scriptex.helper-Bridging-Header.h */,
+				BD06214C25F599350014DAD3 /* OSStatus+Extensions.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -190,6 +203,7 @@
 				TargetAttributes = {
 					BDBAE8BE2490170800292370 = {
 						CreatedOnToolsVersion = 11.4;
+						LastSwiftMigration = 1220;
 					};
 					BDC4F5A1248D4916005713B0 = {
 						CreatedOnToolsVersion = 11.4;
@@ -234,12 +248,15 @@
 			files = (
 				BDBAE8CC24901BEB00292370 /* RemoteApplicationProtocol.swift in Sources */,
 				BDF14BF02490D569002BEF29 /* main.swift in Sources */,
+				BD06214625F58D590014DAD3 /* AuditTokenHack.m in Sources */,
 				BDBAE8D024901C8800292370 /* HelperConstants.swift in Sources */,
 				BDF14BF624911201002BEF29 /* HelperExecutionService.swift in Sources */,
+				BD06214D25F599350014DAD3 /* OSStatus+Extensions.swift in Sources */,
 				BD794E9B24936A4C0092C659 /* Result+Extensions.swift in Sources */,
 				BDF14BF4249111D3002BEF29 /* ScriptexError.swift in Sources */,
 				BDBAE8CB24901BE900292370 /* HelperProtocol.swift in Sources */,
 				BDBAE8CE24901C1B00292370 /* Helper.swift in Sources */,
+				BD06214025F58C760014DAD3 /* ConnectionIdentityService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,11 +293,17 @@
 		BDBAE8C32490170800292370 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Developer ID Application";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = QMZ7ESHY49;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/Helper/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				OTHER_LDFLAGS = (
 					"-sectcreate",
 					__TEXT,
@@ -294,6 +317,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.abridoux.Scriptex.helper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Helper/com.abridoux.Scriptex.helper-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -301,11 +326,17 @@
 		BDBAE8C42490170800292370 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Developer ID Application";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = QMZ7ESHY49;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/Helper/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				OTHER_LDFLAGS = (
 					"-sectcreate",
 					__TEXT,
@@ -319,6 +350,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.abridoux.Scriptex.helper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Helper/com.abridoux.Scriptex.helper-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;

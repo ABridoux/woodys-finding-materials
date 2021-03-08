@@ -4,7 +4,7 @@
 <dict>
 	<key>Label</key>
 	<string>com.abridoux.Scriptex.helper</string>
-	<key>StandardOutputPath</key>
+	<key>StandardErrorPath</key>
 	<string>/tmp/scriptex.helper.log</string>
 	<key>MachServices</key>
 	<dict>

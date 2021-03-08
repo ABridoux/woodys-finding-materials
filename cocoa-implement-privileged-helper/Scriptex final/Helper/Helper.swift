@@ -63,6 +63,8 @@ class Helper: NSObject, NSXPCListenerDelegate, HelperProtocol {
     }
 
     func listener(_ listener: NSXPCListener, shouldAcceptNewConnection newConnection: NSXPCConnection) -> Bool {
+        guard ConnectionIdentityService.isConnectionValid(connection: newConnection) else { return false }
+
         newConnection.exportedInterface = NSXPCInterface(with: HelperProtocol.self)
         newConnection.remoteObjectInterface = NSXPCInterface(with: RemoteApplicationProtocol.self)
         newConnection.exportedObject = self
