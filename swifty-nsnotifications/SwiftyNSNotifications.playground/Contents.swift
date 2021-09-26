@@ -86,8 +86,6 @@ struct Cook {
 final class Client {
     var observer: NotificationObserver?
 
-    init() {}
-
     func startObserving() {
         observer = NotificationObserver(for: .orderIsReady) { [weak self] _ in self?.orderIsReady() }
     }
