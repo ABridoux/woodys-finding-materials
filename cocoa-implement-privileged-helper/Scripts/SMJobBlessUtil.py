@@ -93,7 +93,7 @@ def checkCodeSignature(programPath, programType):
     ]
     try:
         subprocess.check_call(args, stderr=open("/dev/null"))
-    except subprocess.CalledProcessError, e:
+    except subprocess.CalledProcessError:
         raise CheckException("%s code signature invalid" % programType, programPath)
 
 def readDesignatedRequirement(programPath, programType):
@@ -108,7 +108,7 @@ def readDesignatedRequirement(programPath, programType):
     ]
     try:
         req = subprocess.check_output(args, stderr=open("/dev/null"))
-    except subprocess.CalledProcessError, e:
+    except subprocess.CalledProcessError:
         raise CheckException("%s designated requirement unreadable" % programType, programPath)
 
     reqLines = req.splitlines()
@@ -141,7 +141,7 @@ def readPlistFromToolSection(toolPath, segmentName, sectionName):
     ]
     try:
         plistDump = subprocess.check_output(args)
-    except subprocess.CalledProcessError, e:
+    except subprocess.CalledProcessError:
         raise CheckException("tool %s / %s section unreadable" % (segmentName, sectionName), toolPath)
 
     # Convert that hex dump to an property list.
@@ -422,7 +422,7 @@ def main():
 if __name__ == "__main__":
     try:
         main()
-    except CheckException, e:
+    except CheckException:
         if e.path is None:
             print >> sys.stderr, "%s: %s" % (os.path.basename(sys.argv[0]), e.message)
         else:
@@ -431,7 +431,7 @@ if __name__ == "__main__":
                 path = path[:-1]
             print >> sys.stderr, "%s: %s" % (path, e.message)
         sys.exit(1)
-    except UsageException, e:
-        print >> sys.stderr, "usage: %s check  /path/to/app" % os.path.basename(sys.argv[0])
-        print >> sys.stderr, "       %s setreq /path/to/app /path/to/app/Info.plist /path/to/tool/Info.plist..." % os.path.basename(sys.argv[0])
+    except UsageException:
+        print("usage: %s check  /path/to/app" % os.path.basename(sys.argv[0]), file=sys.stderr)
+        print("       %s setreq /path/to/app /path/to/app/Info.plist /path/to/tool/Info.plist..." % os.path.basename(sys.argv[0]), file=sys.stderr)
         sys.exit(1)
